@@ -18,5 +18,7 @@ namespace EntityLayer.Concrete
 
         public bool CategoryStatus { get; set; }
 
+        public List<Blog>Blogs { get; set; } //İlişki kurmak için 
+
     }
 }
