@@ -13,7 +13,7 @@ namespace BusinessLayer.Abstract
 
         void CategoryDelete(Category category);
 
-        void CategorUpdate(Category category);
+        void CategoryUpdate(Category category);
 
         List<Category>GetList();
 
