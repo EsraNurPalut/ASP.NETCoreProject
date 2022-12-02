@@ -37,7 +37,7 @@ namespace DataAccessLayer.Repositories
             c.SaveChanges();
         }
 
-        public List<T> List(Expression<Func<T, bool>> filter)
+        public List<T> GetListAll(Expression<Func<T, bool>> filter)
         {
             using var c = new Context();
             return c.Set<T>().Where(filter).ToList(); //sartım filterdan gelen değerimi listeleyecek
