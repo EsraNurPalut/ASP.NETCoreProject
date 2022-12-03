@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +10,7 @@ namespace Core.Demo.Controllers
 {
     public class CommentController : Controller
     {
+        CommentManager cm = new CommentManager(new EFCommentRepository());
         public IActionResult Index()
         {
             return View();
@@ -18,9 +21,10 @@ namespace Core.Demo.Controllers
             return PartialView();
         }
 
-        public PartialViewResult CommentListByBlog()
+        public PartialViewResult CommentListByBlog(int id )
         {
-            return PartialView();
+            var values = cm.GetList(id);
+            return PartialView(values);
         }
     }
 }
