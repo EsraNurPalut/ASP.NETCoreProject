@@ -32,5 +32,5 @@ namespace BusinessLayer.Concrete
         //{
         //    throw new NotImplementedException();
         //}
-    }
+    } 
 }
