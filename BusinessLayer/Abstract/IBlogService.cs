@@ -24,4 +24,4 @@ namespace BusinessLayer.Abstract
         List<Blog> GetBlogListWithWriter();
 
     }
-}
+} 
