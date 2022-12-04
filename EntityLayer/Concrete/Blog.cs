@@ -27,6 +27,10 @@ namespace EntityLayer.Concrete
         public int CategoryID { get; set; }
         public Category category { get; set; }
 
+
+        public int WriterID { get; set; }
+        public Writer Writer { get; set; }
+
         public List<Comment>Comments { get; set; }
         //bir bloga birden fazla yorum yapılabilir mantıgıyla List metodunu buraya yazıyoruz.
 

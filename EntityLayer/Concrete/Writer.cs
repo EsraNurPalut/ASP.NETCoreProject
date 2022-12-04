@@ -24,6 +24,8 @@ namespace EntityLayer.Concrete
         public string Password { get; set; }
 
         public bool  WriterStatus { get; set; }
+
+        public List<Blog> Blogs { get; set; }
     }
    
 }
