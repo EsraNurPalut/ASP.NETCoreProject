@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Demo.Controllers
 {
-    [Authorize]
-
+  
     public class WriterController : Controller
     {
  
