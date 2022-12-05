@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +11,9 @@ namespace Core.Demo.Controllers
 {
     public class ContactController : Controller
     {
+
+        ContactManager cm = new ContactManager(new EFContactRepository());
+
         [HttpGet]
         public IActionResult Index()
         {
@@ -15,9 +21,12 @@ namespace Core.Demo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index()
+        public IActionResult Index(Contact p)
         {
-            return View();
+            p.ContactDate=DateTime.Parse(DateTime.Now.ToShortDateString());
+            p.ContactStatus = true;
+            cm.ContactAdd(p);
+            return RedirectToAction("Index", "Blog");
         }
     }
 }
