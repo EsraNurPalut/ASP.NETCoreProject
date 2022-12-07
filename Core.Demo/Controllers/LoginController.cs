@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DataAccessLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,5 +16,21 @@ namespace Core.Demo.Controllers
         {
             return View();
         }
+
+        public IActionResult Index(Writer p)
+        {
+            Context c = new Context();
+            var datavalue = c.Writers.FirstOrDefault(x => x.WriterMail == p.WriterMail && x.Password == p.Password);
+            if (datavalue !=null)
+            {
+                HttpContext.Session.SetString("username", p.WriterMail);
+                return RedirectToAction("Writer", "Blog");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
     }
 }
