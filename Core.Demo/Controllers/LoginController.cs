@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +18,8 @@ namespace Core.Demo.Controllers
             return View();
         }
 
+        [HttpPost]
+        [AllowAnonymous]
         public IActionResult Index(Writer p)
         {
             Context c = new Context();
@@ -24,7 +27,7 @@ namespace Core.Demo.Controllers
             if (datavalue !=null)
             {
                 HttpContext.Session.SetString("username", p.WriterMail);
-                return RedirectToAction("Writer", "Blog");
+                return RedirectToAction("Index", "Writer");
             }
             else
             {
