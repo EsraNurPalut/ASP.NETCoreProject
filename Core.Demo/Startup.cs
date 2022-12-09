@@ -28,8 +28,6 @@ namespace Core.Demo
         {
             services.AddControllersWithViews();
 
-            services.AddSession(); //oturum ekleme
-
             services.AddMvc(config =>
             {
                 var policy = new AuthorizationPolicyBuilder()
@@ -68,7 +66,7 @@ namespace Core.Demo
                 app.UseHttpsRedirection();
                 app.UseStaticFiles();
 
-                app.UseSession(); //oturumu kullan
+            app.UseAuthentication(); //login için eklendi
 
                 app.UseRouting();
 
