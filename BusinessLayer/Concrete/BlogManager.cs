@@ -38,9 +38,9 @@ namespace BusinessLayer.Concrete
             return _blogDal.GetListAll();
         }
 
-        public List<Blog> GetBlogListWithWriter()
+        public List<Blog> GetBlogListWithWriter(int id)
         {
-            throw new NotImplementedException();
+            return _blogDal.GetListAll(x=>x.BlogID==id); //writerıd olmalı hatalı
         }
 
         public void TAdd(Blog t)
@@ -54,6 +54,11 @@ namespace BusinessLayer.Concrete
         }
 
         public void TUpdate(Blog t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Blog> GetBlogListWithWriter()
         {
             throw new NotImplementedException();
         }
