@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -42,7 +44,24 @@ namespace Core.Demo.Controllers
         [HttpPost]
         public IActionResult BlogAdd(Blog p)
         {
-            return View();
+                BlogValidator bv = new BlogValidator();
+                ValidationResult results = bv.Validate(p); //validationu kontrol edecek
+                if (results.IsValid) //gecerli ise
+                {
+                    p.BlogStatus = true;
+                p.BlogCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString()); //anın tarihini al
+                bm.TAdd(p);
+                    return RedirectToAction("BlogListWithWriter", "Blog");
+
+                }
+                else
+                {
+                    foreach (var item in results.Errors)
+                    {
+                        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);   //hata mesajı dönderecek. propertının ismi ve mesajı verri.
+                    }
+                }
+                return View();
+            }
         }
-    }
 }
