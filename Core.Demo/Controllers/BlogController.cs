@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -32,7 +33,16 @@ namespace Core.Demo.Controllers
             var values = bm.GetBlogListWithWriter(1);
             return View(values);
         }
+        [HttpGet]
+       public IActionResult BlogAdd()
+        {
+            return View();
+        }
 
-
+        [HttpPost]
+        public IActionResult BlogAdd(Blog p)
+        {
+            return View();
+        }
     }
 }
