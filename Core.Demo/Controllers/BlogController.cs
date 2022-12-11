@@ -32,7 +32,7 @@ namespace Core.Demo.Controllers
 
         public IActionResult BlogListWithWriter()
         {
-            var values = bm.GetBlogListWithWriter(1);
+            var values = bm.GetBlogListWithWriter(3);
             return View(values);
         }
         [HttpGet]
