@@ -82,12 +82,15 @@ namespace Core.Demo.Controllers
         [HttpGet]
         public IActionResult EditBlog(int id)
         {
-            return View();
+            var blogvalue = bm.TGetByID(id);
+
+            return View(blogvalue);
         }
 
         [HttpPost]
         public IActionResult EditBlog(Blog p)
         {
+            bm.TUpdate(p);
             return RedirectToAction("BlogListWithWriter");
         }
 
