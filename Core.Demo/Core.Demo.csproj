@@ -5,6 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Views\Shared\Components\CategoryList\Default.cshtml" />
+    <None Include="Views\Shared\Components\CommentListByBlog\Default.cshtml" />
+    <None Include="Views\Shared\Components\CommentList\Default.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\Partial1.cshtml" />
+    <None Include="Views\Shared\Partial2.cshtml" />
+    <None Include="Views\Shared\Partial3.cshtml" />
+    <None Include="Views\Shared\UserLayout.cshtml" />
+    <None Include="Views\Shared\writerLayout.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.4.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
