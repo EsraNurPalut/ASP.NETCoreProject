@@ -9,7 +9,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IWriterService
     {
-        void WriterAdd(Writer writer);
+        void TAdd(Writer t);
         Writer TGetByID(int id);
         void TUpdate(Writer t);
     }

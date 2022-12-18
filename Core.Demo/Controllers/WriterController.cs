@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using Core.Demo.Models;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -58,21 +60,40 @@ namespace Core.Demo.Controllers
         [HttpPost]
         public IActionResult WriterEditProfile(Writer p)
         {
-            WriterValidator wl = new WriterValidator();
-            ValidationResult result = wl.Validate(p);
-            if (ModelState.IsValid)
-            {
                 wm.TUpdate(p);
                 return RedirectToAction( "Index", "Dashboard");
-            }
-            else
-            {
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
-            }
+        }
+
+
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult WriterAdd()
+        {
             return View();
+
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult WriterAdd(AddProfileImge p)
+        {
+            Writer w = new Writer();
+            if (p.WriterImage !=null)
+            {
+                var extension = Path.GetExtension(p.WriterImage.FileName);
+                var newimagename = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/writerImageFiles/", newimagename);
+                var stream = new FileStream(location, FileMode.Create);
+                p.WriterImage.CopyTo(stream);
+                w.WriterImage = newimagename;
+            }
+            w.WriterMail = p.WriterMail;
+            w.WriterName = p.WriterName;
+            w.Password = p.Password;
+            w.WriterStatus = true;
+            w.WriterAbout = p.WriterAbout;
+            wm.TAdd(w);
+            return RedirectToAction("Index", "Dashboard");
         }
 
     }

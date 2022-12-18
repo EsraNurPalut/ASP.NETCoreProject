@@ -30,7 +30,7 @@ namespace Core.Demo.Controllers
             {
                 p.WriterAbout = "Deneme";
                 p.WriterStatus = true;
-                wm.WriterAdd(p);
+                wm.TAdd(p);
                 return RedirectToAction("Index", "Blog");
 
             }
