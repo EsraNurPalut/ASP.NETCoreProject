@@ -11,5 +11,6 @@ namespace BusinessLayer.Abstract
     {
         void WriterAdd(Writer writer);
         Writer TGetByID(int id);
+        void TUpdate(Writer t);
     }
 }

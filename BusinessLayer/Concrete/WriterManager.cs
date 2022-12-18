@@ -18,6 +18,11 @@ namespace BusinessLayer.Concrete
             return _writerDal.GetByID(id);
         }
 
+        public void TUpdate(Writer t)
+        {
+            _writerDal.Update(t);
+        }
+
         //public WriterManager(IWriterService writerDal)
         //{
         //    _writerDal = writerDal;
