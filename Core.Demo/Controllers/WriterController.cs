@@ -54,7 +54,7 @@ namespace Core.Demo.Controllers
             return View(values);
 
         }
-
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult WriterEditProfile(Writer p)
         {
@@ -63,7 +63,7 @@ namespace Core.Demo.Controllers
             if (ModelState.IsValid)
             {
                 wm.TUpdate(p);
-                return RedirectToAction("Dashboard", "Index");
+                return RedirectToAction( "Index", "Dashboard");
             }
             else
             {
