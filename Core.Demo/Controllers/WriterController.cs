@@ -70,12 +70,11 @@ namespace Core.Demo.Controllers
         public IActionResult WriterAdd()
         {
             return View();
-
         }
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult WriterAdd(AddProfileImge p)
+        public IActionResult WriterAdd(AddProfileImge p)  //resim eklemek için
         {
             Writer w = new Writer();
             if (p.WriterImage !=null)

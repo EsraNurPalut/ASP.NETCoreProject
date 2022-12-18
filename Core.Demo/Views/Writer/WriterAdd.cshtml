@@ -4,13 +4,13 @@
     Layout = "~/Views/Shared/writerLayout.cshtml";
 }
 
-<h1>WriterAdd</h1>
+<h1>Yazar Ekleme Sayfası</h1>
 
-<form class="form-group" method=" post" enctype="multipart/form-data">
+<form class="form-group" method="post" enctype="multipart/form-data">
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Yazar Profil Bilgileri Düzenleme</h4>
+                <h4 class="card-title">Yazar Profili</h4>
                 @Html.HiddenFor(x => x.WriterID, new { @class = "form-control" })
                 <div class="forms-sample">
                     <div class="form-group">
@@ -36,7 +36,7 @@
                         <label for="exampleInputCity1">Yazar Hakkında</label>
                         @Html.TextAreaFor(x => x.WriterAbout, 10, 3, new { @class = "form-control" })
                     </div>
-                    <button type="submit" class="btn btn-gradient-primary mr-2">Güncelle</button>
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Kaydet</button>
                     <button class="btn btn-light">İptal</button>
                 </div>
             </div>
