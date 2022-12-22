@@ -15,7 +15,7 @@ namespace Core.Demo.Controllers
         BlogManager bm = new BlogManager(new EFBlogRepository());
 
         [AllowAnonymous]
-        public IActionResult Index()
+        public IActionResult Index() 
         {
             Context c = new Context();
             ViewBag.v1 = c.Blogs.Count().ToString();
