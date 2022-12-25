@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using X.PagedList;
 
 namespace Core.Demo.Areas.Admin.Controllers
 {
@@ -13,9 +14,9 @@ namespace Core.Demo.Areas.Admin.Controllers
     {
         CategoryManager cm = new CategoryManager(new EFCategoryRepository());
 
-        public IActionResult Index()
-        {
-            var values = cm.GetList();
+        public IActionResult Index(int page = 1)
+        {    
+            var values = cm.GetList().ToPagedList(page,3); //topagedlist :baslangıc parametresi(sayfalamaa işlemşn kacıncı sayfadan baslıyor),her bir sayfada senin kac tane degerin olacak. 
             return View(values);
         }
     }

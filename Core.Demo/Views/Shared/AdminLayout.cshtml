@@ -88,76 +88,6 @@
                         <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">Ayarlar</span><span class="fa arrow"></span></a>
 
                     </li>
-
-                    @*<li>
-                            <a href="grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
-                        </li>
-                        <li class="active">
-                            <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li class="active"><a href="table_basic.html">Static Tables</a></li>
-                                <li><a href="table_data_tables.html">Data Tables</a></li>
-                                <li><a href="table_foo_table.html">Foo Tables</a></li>
-                                <li><a href="jq_grid.html">jqGrid</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li><a href="ecommerce_products_grid.html">Products grid</a></li>
-                                <li><a href="ecommerce_product_list.html">Products list</a></li>
-                                <li><a href="ecommerce_product.html">Product edit</a></li>
-                                <li><a href="ecommerce_product_detail.html">Product detail</a></li>
-                                <li><a href="ecommerce-cart.html">Cart</a></li>
-                                <li><a href="ecommerce-orders.html">Orders</a></li>
-                                <li><a href="ecommerce_payments.html">Credit Card form</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li><a href="basic_gallery.html">Lightbox Gallery</a></li>
-                                <li><a href="slick_carousel.html">Slick Carousel</a></li>
-                                <li><a href="carousel.html">Bootstrap Carousel</a></li>
-
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level collapse">
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                                <li><a href="#">Second Level Item</a></li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info float-right">62</span></a>
-                        </li>
-                        <li class="landing_link">
-                            <a target="_blank" href="landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning float-right">NEW</span></a>
-                        </li>
-                        <li class="special_link">
-                            <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
-                        </li>*@
                 </ul>
 
             </div>
@@ -178,7 +108,7 @@
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
-                        <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
+                        <span class="m-r-sm text-muted welcome-message">Hosgeldiniz!</span>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
@@ -301,37 +231,12 @@
                     </li>
                 </ol>
             </div>
+            @RenderBody()
             <div class="col-lg-2">
-
             </div>
         </div>
-
-        @RenderBody()
-
-
-
-        <!-- Mainly scripts -->
-        <!--<script src="~/inspinia-gh-pages/js/jquery-3.1.1.min.js"></script>
-    <script src="~/inspinia-gh-pages/js/popper.min.js"></script>
-    <script src="~/inspinia-gh-pages/js/bootstrap.js"></script>
-    <script src="~/inspinia-gh-pages/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="~/inspinia-gh-pages/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>-->
-        <!-- Peity -->
-        <!--<script src="~/inspinia-gh-pages/js/plugins/peity/jquery.peity.min.js"></script>-->
-        <!-- Custom and plugin javascript -->
-        <!--<script src="~/inspinia-gh-pages/js/inspinia.js"></script>
-    <script src="~/inspinia-gh-pages/js/plugins/pace/pace.min.js"></script>-->
-        <!-- iCheck -->
-        <!--<script src="~/inspinia-gh-pages/js/plugins/iCheck/icheck.min.js"></script>-->
-        <!-- Peity -->
-        <!--<script src="~/inspinia-gh-pages/js/demo/peity-demo.js"></script>
-
-    <script>$(document).ready(function(){
-            $('.i-checks').iCheck({
-                checkboxClass: 'icheckbox_square-green',
-                radioClass: 'iradio_square-green',
-            });
-        });</script>-->
+    </div>
+  
 
 </body>
 
