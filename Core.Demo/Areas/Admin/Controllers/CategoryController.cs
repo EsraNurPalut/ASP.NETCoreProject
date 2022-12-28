@@ -50,7 +50,7 @@ namespace Core.Demo.Areas.Admin.Controllers
             }
             return View();
         }
-        public IActionResult DeleteCategory()
+        public IActionResult DeleteCategory(int id)
         {
             var value = cm.TGetByID(id);
             cm.TDelete(value);

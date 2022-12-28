@@ -22,7 +22,8 @@
 
             <td>@item.CategoryID</td>
             <td>@item.CategoryName</td>
-            <td><a href="#" class="btn btn-outline-danger">Pasif Yap</a> </td>
+            <td><a href="/Admin/Category/DeleteCategory/@item.CategoryID/"  id="delete btn" onclick="return confirm('Silmek istediğinize emin misinz');"btn btn-outline-danger">Pasif Yap</a> </td>
+            
             <td><a href="#" class="btn btn-outline-success">Aktif Yap</a> </td>
             <td><a href="#" class="btn btn-outline-primary">Düzenle</a> </td>
 
