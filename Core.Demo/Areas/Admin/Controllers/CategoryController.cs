@@ -1,6 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -28,16 +30,15 @@ namespace Core.Demo.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddCatgeory(Category category)
+        public IActionResult AddCategory(Category p)
         {
-            BlogValidator bv = new BlogValidator();
-            ValidationResult results = bv.Validate(p); //validationu kontrol edecek
+            CategoryValidator cv = new CategoryValidator();
+            ValidationResult results = cv.Validate(p); //validationu kontrol edecek
             if (results.IsValid) //gecerli ise
             {
-                p.BlogStatus = true;
-                p.BlogCreateDate = DateTime.Parse(DateTime.Now.ToShortDateString()); //anın tarihini al
-                bm.TAdd(p);
-                return RedirectToAction("BlogListWithWriter", "Blog");
+                p.CategoryStatus = true;             
+                cm.TAdd(p);
+                return RedirectToAction("Index", "Category");
 
             }
             else
@@ -48,6 +49,12 @@ namespace Core.Demo.Areas.Admin.Controllers
                 }
             }
             return View();
+        }
+        public IActionResult DeleteCategory()
+        {
+            var value = cm.TGetByID(id);
+            cm.TDelete(value);
+            return RedirectToAction("Index");
         }
     }
 }
