@@ -17,9 +17,8 @@
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(DrawonLoad);
 
-    function.DrawonLoad()
-    {
-        $(function
+    function DrawonLoad() {
+        $(function () {
             $.ajax({
                 type: 'Get',
                 url: '/Admin/Chart/CategoryChart/',
@@ -31,13 +30,19 @@
                     data.addColumn('number', 'categorycount');
 
                     for (var i = 0; i < Data.length; i++) {
-                        data.addRow([Data[i].categoryname], Data[i].categorycount]);
+                        data.addRow([Data[i].categoryname,Data[i].categorycount]);
                     }
-                    var chart = new google.visualization.PieChart(document.getElementById(''));
+                    var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
 
+                    chart.draw(data,
+                        {
+                            title: "Google Chart Core Projesi",
+                            position: "top",
+                            fontsize: "16px"
 
+                        });
                 }
-            })
-    })
+            });
+        })
     }
 </script>
