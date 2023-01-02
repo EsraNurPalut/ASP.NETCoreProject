@@ -8,6 +8,6 @@ namespace Core.Demo.Areas.Admin.Models
     public class WriterClass
     {
         public int Id { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
     }
 }

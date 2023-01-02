@@ -11,4 +11,18 @@
 <div id="writerlist">
     yazarlar gelecek
 </div>
-
+@section Scripts{
+<script>
+    $("#btngetlist").click(function () {
+        $.ajax({
+            contentType: "application/json",
+            dataType: "json",
+            type: "Get",
+            url: "/Admin/Writer/WriterList/",
+            success: function (func) {
+                console.log(func);
+            }
+        });
+    });
+    </script>
+    }
